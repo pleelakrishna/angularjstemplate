@@ -63,11 +63,17 @@ p {
          <option value="">Select</option>
           <option  ng-repeat="dept in departments " value="{{dept.id}}" >{{dept.name}}</option>
       </select> -->
-      
-       <select class="form-control" id="departmentid" name="departmentid" ng-model="studentform.departmentid" ng-change="myFunc(studentform.departmentid)"  ng-options="dept.id as dept.name for dept in departments">
+      {{departments}}
+       <select class="form-control" id="departmentid" name="departmentid" ng-model="studentform.departmentid" ng-change="myFunc(studentform.departmentid)"  ng-options="value.id as value.name for (key, value) in departments">
         <option value="">Select Country</option>
       </select>
       </div>
+      <select ng-model="studentform.departmentid"               
+        ng-options="x.id as x.name for x in departments"
+        class="form-control" 
+        ng-required="true">
+  <option value="">-- Choose Country --</option>
+</select>
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">

@@ -85,10 +85,13 @@ mainApp.controller('brealController', function($scope, $http) {
 		  alert(msg.departmentid);
 		 // $scope.studentform.departmentid = msg.departmentid;
 		  
-		  console.log(msg.departmentid);
+		  console.log(msg);
 		  
 		  $scope.leela=msg.departmentid;
-		  $scope.studentform.departmentid =$scope.leela;
+		 // $scope.studentform.departmentid =1;
+		  
+		  $scope.studentform.departmentid=parseInt($scope.leela);
+		  //val.id = parseInt(val.id);
 	  	}
 	  
 	  
